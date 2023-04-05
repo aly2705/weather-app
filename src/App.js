@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import useInit from "./hooks/useInit";
+//import { useContext } from "react";
+//import CurrentContext from "./store/current-context";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  useInit();
+  //const currentContext = useContext(CurrentContext);
+  //const { initialData } = useInit();
+
+  return <div className="App"></div>;
 }
 
 export default App;
