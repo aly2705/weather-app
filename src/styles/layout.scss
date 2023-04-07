@@ -1,0 +1,4 @@
+.main {
+  display: grid;
+  grid-template-columns: [bar-start] 50rem [bar-end dash-start] auto [dash-end];
+}

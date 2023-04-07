@@ -1,0 +1,31 @@
+.forecast {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 0;
+
+  &__btn {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    top: 50%;
+    cursor: pointer;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+      fill: var(--color-text-light-tertiary);
+    }
+
+    &--back {
+      left: -2rem;
+      transform: translate(-50%, -50%);
+    }
+    &--next {
+      right: -2rem;
+      transform: translate(50%, -50%);
+    }
+  }
+}

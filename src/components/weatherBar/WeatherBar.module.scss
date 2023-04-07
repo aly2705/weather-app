@@ -1,0 +1,18 @@
+.current {
+  grid-column: bar-start / bar-end;
+  min-height: 100vh;
+  background-color: var(--color-grad-1);
+  background: linear-gradient(
+    160deg,
+    var(--color-grad-1) 50%,
+    var(--color-grad-2)
+  );
+  background: linear-gradient(
+      160deg,
+      var(--color-grad-1-transparent) 50%,
+      var(--color-grad-2-transparent)
+    ),
+    url("../../assets/img/background-overcast.jpg");
+  color: var(--color-text-light-primary);
+  padding: 4rem;
+}

@@ -3,8 +3,29 @@
 ///////////////////////////////////////////////////
 //COLORS
 :root {
-  --color-primary-light: #c4e2fe;
-  --color-primary-dark: #223956;
+  --color-grad-1: #223956;
+  --color-grad-2: #183a7e;
+  --color-grad-1-transparent: #223956e3;
+  --color-grad-2-transparent: #183a7e;
+  --color-primary-shade: #2b4879;
+  --color-primary: #2f69fe; //figma logo
+  --color-primary-tint: #8cb2fb;
+
+  --color-text-light-primary: #e9ecef;
+  --color-text-light-secondary: #c4e2fe;
+  --color-text-light-tertiary: #adb5bd;
+
+  --color-grey-1: #e9ecef;
+  --color-grey-2: #ced4da;
+  --color-grey-3: #adb5bd;
+
+  --color-grey-faded: #868e9690;
+}
+
+[data-theme="day"] {
+  --color-grad-1: #223956;
+  --color-grad-2: #183a7e;
+  --color-primary: #c4e2fe;
 }
 
 //BREAKPOINTS

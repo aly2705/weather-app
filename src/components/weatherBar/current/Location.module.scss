@@ -1,0 +1,13 @@
+.location {
+  display: grid;
+
+  &__city {
+    font-size: 2.4rem;
+    color: var(--color-text-light-secondary);
+    font-weight: 600;
+  }
+  &__hour {
+    font-weight: 600;
+    // color: var(--color-text-light-secondary);
+  }
+}

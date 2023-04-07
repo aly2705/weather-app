@@ -1,13 +1,16 @@
-import useInit from "./hooks/useInit";
-//import { useContext } from "react";
-//import CurrentContext from "./store/current-context";
+// import useInit from "./hooks/useInit";
+import WeatherBar from "./components/weatherBar/WeatherBar";
+import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
-  useInit();
-  //const currentContext = useContext(CurrentContext);
-  //const { initialData } = useInit();
+  // useInit();
 
-  return <div className="App"></div>;
+  return (
+    <main className="main">
+      <WeatherBar />
+      <Dashboard />
+    </main>
+  );
 }
 
 export default App;
