@@ -1,0 +1,37 @@
+.favorites {
+  position: relative;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem 5rem;
+
+  h2 {
+    grid-column: 1 / -1;
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  &__btn {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    top: 68%;
+    cursor: pointer;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+      fill: var(--color-text-light-tertiary);
+    }
+
+    &--back {
+      left: -2.5rem;
+      transform: translate(-50%, -50%);
+    }
+    &--next {
+      right: -2.5rem;
+      transform: translate(50%, -50%);
+    }
+  }
+}

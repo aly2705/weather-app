@@ -1,0 +1,28 @@
+.search {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-white);
+  height: fit-content;
+  gap: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 1.5rem;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    fill: #888;
+  }
+
+  input {
+    padding: 1rem 1rem;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    width: 23rem;
+    font-family: inherit;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+}

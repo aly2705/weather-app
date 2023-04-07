@@ -1,0 +1,15 @@
+.forecast {
+  margin-top: 4rem;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+  }
+
+  &__days {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
