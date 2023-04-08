@@ -19,12 +19,13 @@
   --color-text-dark-primary: #212529;
   --color-text-dark-secondary: #868e96;
 
-  // --color-grey-1: #edf7fe; // blueish light background
-  --color-grey-1: #f8f9fa;
+  --color-grey-1: #edf4fa; // blueish light background
+  //--color-grey-1: #f8f9fa;
   --color-grey-2: #ced4da;
   --color-grey-3: #adb5bd;
 
   --color-grey-faded: #868e965c;
+  --color-light-faded: #edf4fad4;
   --color-white: #fff;
   --color-black: #000;
 }
@@ -38,10 +39,8 @@
 //BREAKPOINTS
 
 $bp-big-desktop: 112.5em; //1800px
-$bp-laptop: 93.75em; //1500px
-$bp-laptop-small: 85em; //1360px
-$bp-tab-land: 75em; //1200px
-$bp-tab-land-small: 64em; //1024px
+$bp-laptop: 78.75em; //1200px
+$bp-tab-land: 64em; //1024px
 $bp-tab-port-large: 60em; //960px
 $bp-tab-port: 48.125em; //960px
 $bp-phone: 37.5em; //600px
@@ -55,18 +54,8 @@ $bp-phone-v-small: 25em; //400px
       @content;
     }
   }
-  @if $breakpoint==laptop-small {
-    @media only screen and (max-width: $bp-laptop-small) {
-      @content;
-    }
-  }
   @if $breakpoint==tab-land {
     @media only screen and (max-width: $bp-tab-land) {
-      @content;
-    }
-  }
-  @if $breakpoint==tab-land-small {
-    @media only screen and (max-width: $bp-tab-land-small) {
       @content;
     }
   }

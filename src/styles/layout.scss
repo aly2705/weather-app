@@ -1,4 +1,10 @@
+@import "./abstracts.scss";
+
 .main {
   display: grid;
-  grid-template-columns: [bar-start] 50rem [bar-end dash-start] auto [dash-end];
+  grid-template-columns: 50rem auto;
+
+  @include respond(tab-port-large) {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,3 +1,5 @@
+@import "../../../styles/abstracts.scss";
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -9,9 +11,15 @@
     content: "";
     display: block;
     position: absolute;
-    background-color: #eee;
+    background-color: #ddd;
     width: 100%;
     bottom: 1.5rem;
     height: 1px;
+  }
+
+  @include respond(tab-port-large) {
+    form {
+      display: none;
+    }
   }
 }

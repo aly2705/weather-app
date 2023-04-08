@@ -1,3 +1,5 @@
+@import "../../../styles/abstracts.scss";
+
 .search {
   display: flex;
   align-items: center;
@@ -20,6 +22,10 @@
     outline: none;
     width: 23rem;
     font-family: inherit;
+
+    @include respond(tab-land) {
+      width: 16rem;
+    }
 
     &::placeholder {
       color: #aaa;

@@ -3,6 +3,7 @@ import classes from "./SearchBar.module.scss";
 import icons from "../../../assets/icons/icons.svg";
 
 const SearchBar = () => {
+  
   return (
     <form className={classes.search}>
       <svg>

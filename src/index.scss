@@ -15,4 +15,15 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @include respond(laptop) {
+    font-size: 56.25%;
+  }
+
+  @include respond(phone) {
+    font-size: 50%;
+  }
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
 }

@@ -1,3 +1,5 @@
+@import "../../../styles/abstracts.scss";
+
 .day {
   padding: 3rem 6rem;
   display: flex;
@@ -9,10 +11,18 @@
   transform: scale(1);
   transition: all 0.3s;
 
+  @include respond(laptop) {
+    padding: 3rem;
+  }
+
   &__weekday {
     color: var(--color-primary-tint-2);
     font-weight: 700;
     font-size: 2rem;
+
+    @include respond(laptop) {
+      font-size: 1.8rem;
+    }
   }
   &__extremes {
     font-weight: 600;

@@ -1,3 +1,5 @@
+@import "../../../styles/abstracts.scss";
+
 .pin {
   background-color: #fff;
   padding: 2rem 2.2rem;
@@ -9,11 +11,17 @@
   transform: scale(1);
   transition: all 0.3s;
 
+  @include respond(tab-land) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
   h3 {
     grid-column: 1 / -1;
     justify-self: center;
     font-size: 1.8rem;
     color: var(--color-primary-tint-2);
+    text-align: center;
   }
 
   figure {
@@ -48,6 +56,11 @@
     text-align: end;
     margin-right: 1rem;
     font-weight: 600;
+
+    @include respond(tab-land) {
+      justify-self: center;
+      margin-right: 0;
+    }
   }
 
   &:hover {
