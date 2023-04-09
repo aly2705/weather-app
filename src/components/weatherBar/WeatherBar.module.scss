@@ -21,6 +21,13 @@
   color: var(--color-text-light-primary);
   padding: 3.5rem 4rem;
 
+  @include respond(phone) {
+    min-height: calc(var(--mobVh, 1vh) * 100);
+  }
+  @include respond(phone-small) {
+    padding: 3rem 4rem;
+  }
+
   form {
     display: none;
 

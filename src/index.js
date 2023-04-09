@@ -10,3 +10,9 @@ root.render(
     <App />
   </CurrentContextProvider>
 );
+
+// Set property for real vh unit to avoid design breaks because of web sidebars
+document.documentElement.style.setProperty(
+  "--mobVh",
+  `${window.innerHeight / 100}px`
+);

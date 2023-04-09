@@ -4,7 +4,7 @@
   display: grid;
 
   @include respond(phone-small) {
-    margin-top: 8rem;
+    margin-top: 7rem;
   }
 
   &__city {
