@@ -17,9 +17,10 @@ const useInit = () => {
     (position) => {
       const { latitude, longitude } = position.coords;
       const coords = [latitude, longitude];
-      const url = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${coords.join(
+      const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${coords.join(
         ","
-      )}&days=3`;
+      )}&days=4`;
+
       sendRequest(url, process);
     },
     [sendRequest, process]

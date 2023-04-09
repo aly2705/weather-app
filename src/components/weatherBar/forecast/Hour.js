@@ -6,13 +6,13 @@ const Hour = ({ forecast }) => {
   return (
     <div className={classes.hour}>
       <span className={classes.hour__time}>{forecast.time.slice(-5)}</span>
-      <img src={forecast.condition.icon} alt="Weather Icon" />
-      <span className={classes.hour__temp}>{forecast.temp_c}°C</span>
+      <img src={forecast.icon} alt="Weather Icon" />
+      <span className={classes.hour__temp}>{forecast.temperature}°C</span>
       <span className={classes.hour__rain}>
         <svg>
           <use href={`${icons}#icon-raindrops`}></use>
         </svg>
-        {forecast.chance_of_rain}%
+        {forecast.chanceOfRain}%
       </span>
     </div>
   );

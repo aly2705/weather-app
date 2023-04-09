@@ -1,9 +1,9 @@
-// import useInit from "./hooks/useInit";
+import useInit from "./hooks/useInit";
 import WeatherBar from "./components/weatherBar/WeatherBar";
 import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
-  // useInit();
+  useInit();
 
   return (
     <main className="main">

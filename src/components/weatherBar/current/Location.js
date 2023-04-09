@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Location.module.scss";
+import CurrentContext from "../../../store/current-context";
 
 const Location = () => {
+  const location = useContext(CurrentContext).location;
   return (
     <div className={classes.location}>
-      <div className={classes.location__city}> Bucharest, Romania</div>
-      <div className={classes.location__hour}> 8:34 AM</div>
+      <div className={classes.location__city}>
+        {location.city}, {location.country}
+      </div>
+      <div className={classes.location__hour}>{location.hourString}</div>
     </div>
   );
 };

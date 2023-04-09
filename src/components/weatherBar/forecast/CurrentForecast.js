@@ -1,19 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./CurrentForecast.module.scss";
 import Hour from "./Hour";
 import icons from "../../../assets/icons/icons.svg";
-
-const forecast = {
-  time: "2023-04-08 01:00",
-  temp_c: 9.5,
-  condition: {
-    icon: "//cdn.weatherapi.com/weather/64x64/night/122.png",
-  },
-  chance_of_rain: 0,
-};
-const forecasts = [forecast, forecast, forecast, forecast];
+import CurrentContext from "../../../store/current-context";
 
 const CurrentForecast = () => {
+  const weather = useContext(CurrentContext).weather;
+  const forecasts = weather.hours?.slice(1, 5);
   return (
     <section className={classes.forecast}>
       <button
@@ -32,9 +25,10 @@ const CurrentForecast = () => {
           <use href={`${icons}#icon-keyboard_arrow_right`}></use>
         </svg>
       </button>
-      {forecasts.map((forecast, i) => {
-        return <Hour key={i} forecast={forecast} />;
-      })}
+      {forecasts &&
+        forecasts.map((forecast, i) => {
+          return <Hour key={i} forecast={forecast} />;
+        })}
     </section>
   );
 };

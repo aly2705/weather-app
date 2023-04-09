@@ -6,14 +6,24 @@ const Day = ({ dayForecast }) => {
   return (
     <div className={classes.day}>
       <div className={classes.day__time}>
-        <div className={classes.day__weekday}>{dayForecast.weekday}</div>
-        <div className={classes.day__date}>March 1, 2023</div>
+        <div className={classes.day__weekday}>
+          {dayForecast.time?.toLocaleString(navigator.language, {
+            weekday: "long",
+          })}
+        </div>
+        <div className={classes.day__date}>
+          {dayForecast.time?.toLocaleString(navigator.language, {
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          })}
+        </div>
       </div>
       <div className={classes.day__condition}>
         <img src={dayForecast.icon} alt="Weather Icon" />
         <div>
           <div className={classes.day__extremes}>
-            {dayForecast.minTemp}° / {dayForecast.maxTemp}°
+            {Math.floor(dayForecast.min)}° / {Math.floor(dayForecast.max)}°
           </div>
           <span className={classes.day__rain}>
             <svg>
