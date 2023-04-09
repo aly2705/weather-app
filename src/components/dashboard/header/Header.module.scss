@@ -22,4 +22,8 @@
       display: none;
     }
   }
+
+  @include respond(tab-port-large) {
+    margin: 2rem 0;
+  }
 }

@@ -18,8 +18,8 @@ const CurrentWeather = () => {
       </div>
       <ul className={classes.weather__details}>
         <li>2° / 10°</li>
-        <li>Feels like 8°C</li>
         <li>Rain 5%</li>
+        <li>Feels like 8°C</li>
       </ul>
     </div>
   );

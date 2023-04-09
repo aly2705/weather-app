@@ -6,11 +6,11 @@ import Forecast from "./forecast/Forecast";
 
 const Dashboard = () => {
   return (
-    <div className={classes.dashboard}>
+    <section className={classes.dashboard} id="dashboard">
       <Header />
       <Favorites />
       <Forecast />
-    </div>
+    </section>
   );
 };
 

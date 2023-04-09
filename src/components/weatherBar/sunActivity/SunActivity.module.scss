@@ -1,7 +1,16 @@
+@import "../../../styles/abstracts.scss";
+
 .sun {
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
+
+  @include respond(tab-port-large) {
+    padding-top: 3rem;
+  }
+  @include respond(phone-v-small) {
+    padding-top: 1.5rem;
+  }
 
   &__activity {
     width: 46%;
@@ -12,16 +21,24 @@
     border-radius: 0.5rem;
     background-color: var(--color-primary-shade);
 
+    @include respond(phone-v-small) {
+      padding: 1rem;
+    }
+
     svg {
       width: 5rem;
       height: 5rem;
-      fill: var(--color-primary-tint);
+      fill: var(--color-grey-1);
     }
   }
 
   &__activity-desc {
     display: grid;
     padding: 1.5rem 2rem;
+
+    @include respond(phone-v-small) {
+      padding: 1rem;
+    }
 
     span:nth-child(1) {
       font-weight: 600;

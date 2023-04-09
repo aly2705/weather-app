@@ -1,5 +1,11 @@
+@import "../../../styles/abstracts.scss";
+
 .location {
   display: grid;
+
+  @include respond(phone-small) {
+    margin-top: 8rem;
+  }
 
   &__city {
     font-size: 2.4rem;

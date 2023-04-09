@@ -15,6 +15,17 @@
     padding: 3rem;
   }
 
+  @include respond(tab-port-large) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding: 3rem 4rem;
+  }
+  @include respond(phone-v-small) {
+    padding: 2rem 3rem;
+  }
+
   &__weekday {
     color: var(--color-primary-tint-2);
     font-weight: 700;
@@ -22,6 +33,32 @@
 
     @include respond(laptop) {
       font-size: 1.8rem;
+    }
+    @include respond(tab-port-large) {
+      font-size: 2rem;
+    }
+  }
+
+  &__date {
+    display: none;
+
+    @include respond(tab-port-large) {
+      display: initial;
+      color: var(--color-text-dark-secondary);
+      font-weight: 600;
+    }
+  }
+
+  &__condition {
+    @include respond(tab-port-large) {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+  img {
+    @include respond(phone-v-small) {
+      display: none;
     }
   }
   &__extremes {
@@ -39,6 +76,10 @@
       height: 2.2rem;
       fill: var(--color-primary);
     }
+
+    // @include respond(tab-port-large) {
+    //   grid-column: 2 / 3;
+    // }
   }
 
   &:hover {

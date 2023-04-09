@@ -26,6 +26,13 @@
     @include respond(tab-land) {
       width: 16rem;
     }
+    @include respond(tab-port-large) {
+      width: 20rem;
+    }
+
+    @include respond(phone-small) {
+      width: 100%;
+    }
 
     &::placeholder {
       color: #aaa;
