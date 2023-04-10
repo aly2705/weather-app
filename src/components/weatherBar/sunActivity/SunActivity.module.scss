@@ -8,8 +8,11 @@
   @include respond(tab-port-large) {
     padding-top: 3rem;
   }
+  @include respond(tab-port) {
+    padding-top: 2rem;
+  }
   @include respond(phone-v-small) {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
   }
 
   &__activity {

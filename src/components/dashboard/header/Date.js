@@ -11,7 +11,7 @@ const Date = () => {
   };
 
   const date = useContext(CurrentContext).location.localTime?.toLocaleString(
-    navigator.language,
+    "en-US",
     dateOptions
   );
   return (

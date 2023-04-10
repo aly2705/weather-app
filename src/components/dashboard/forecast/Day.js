@@ -7,12 +7,12 @@ const Day = ({ dayForecast }) => {
     <div className={classes.day}>
       <div className={classes.day__time}>
         <div className={classes.day__weekday}>
-          {dayForecast.time?.toLocaleString(navigator.language, {
+          {dayForecast.time?.toLocaleString("en-US", {
             weekday: "long",
           })}
         </div>
         <div className={classes.day__date}>
-          {dayForecast.time?.toLocaleString(navigator.language, {
+          {dayForecast.time?.toLocaleString("en-US", {
             month: "long",
             day: "numeric",
             year: "numeric",

@@ -50,6 +50,10 @@
   }
 
   &__condition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     @include respond(tab-port-large) {
       display: flex;
       align-items: center;
@@ -63,10 +67,12 @@
   }
   &__extremes {
     font-weight: 600;
+    text-align: center;
   }
 
   &__rain {
     display: flex;
+    justify-content: center;
     font-size: 1.6rem;
     color: var(--color-text-dark-secondary);
     font-weight: 600;

@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Header.module.scss";
 import Date from "./Date";
-import SearchBar from "./SearchBar";
+import SearchBar from "../../UI/SearchBar";
 
 const Header = () => {
   return (

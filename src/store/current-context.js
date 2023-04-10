@@ -12,7 +12,6 @@ const CurrentContext = React.createContext({
     sunrise: "",
     sunset: "",
     isDay: 0,
-    hours: [],
   },
   location: {
     city: "",
@@ -22,6 +21,7 @@ const CurrentContext = React.createContext({
   },
   forecast: {
     days: [],
+    hours: [],
   },
   setCurrentData: (APIdata) => {},
 });
@@ -43,21 +43,41 @@ export const CurrentContextProvider = (props) => {
       sunrise: APIdata.forecast.forecastday.at(0).astro.sunrise,
       sunset: APIdata.forecast.forecastday.at(0).astro.sunset,
       isDay: APIdata.current.is_day,
-      hours: APIdata.forecast.forecastday.at(0).hour.map((hour) => {
+    };
+    const currentLocation = {
+      city: APIdata.location.region || APIdata.location.name,
+      country: APIdata.location.country,
+      localTime: new Date(APIdata.location.localtime_epoch * 1000),
+      hourString: APIdata.location.localtime.slice(-5),
+    };
+
+    const hoursForecastedToday = APIdata.forecast.forecastday
+      .at(0)
+      .hour.filter((hour) => {
+        const currentHour = new Date().getHours();
+        return currentHour <= new Date(hour.time_epoch * 1000).getHours();
+      })
+      .map((hour) => {
         return {
           time: hour.time,
           temperature: hour.temp_c,
           icon: hour.condition.icon,
           chanceOfRain: hour.chance_of_rain,
         };
-      }),
-    };
-    const currentLocation = {
-      city: APIdata.location.region,
-      country: APIdata.location.country,
-      localTime: new Date(APIdata.location.localtime_epoch * 1000),
-      hourString: APIdata.location.localtime.slice(-5),
-    };
+      });
+    console.log(hoursForecastedToday.length);
+
+    const hoursForecastedTomorrow = APIdata.forecast.forecastday
+      .at(1)
+      .hour.filter((hour, i) => i < 24 - hoursForecastedToday.length)
+      .map((hour) => {
+        return {
+          time: hour.time,
+          temperature: hour.temp_c,
+          icon: hour.condition.icon,
+          chanceOfRain: hour.chance_of_rain,
+        };
+      });
 
     const dailyForecast = {
       days: APIdata.forecast.forecastday.map((day) => {
@@ -69,6 +89,7 @@ export const CurrentContextProvider = (props) => {
           chanceOfRain: day.day.daily_chance_of_rain,
         };
       }),
+      hours: [...hoursForecastedToday, ...hoursForecastedTomorrow],
     };
     console.log(currentWeather);
     console.log(currentLocation);

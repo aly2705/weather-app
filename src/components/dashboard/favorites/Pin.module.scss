@@ -14,6 +14,7 @@
   @include respond(tab-land) {
     grid-template-columns: 1fr;
     justify-items: center;
+    height: 18rem;
   }
 
   @include respond(tab-port-large) {

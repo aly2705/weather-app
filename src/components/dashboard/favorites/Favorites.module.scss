@@ -4,7 +4,7 @@
   position: relative;
   margin: 2rem 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 3rem 5rem;
 
   @include respond(laptop) {
@@ -22,6 +22,25 @@
     grid-column: 1 / -1;
     font-size: 2.4rem;
     font-weight: 700;
+  }
+
+  &__slider {
+    position: relative;
+    width: 100%;
+    min-height: 12rem;
+    overflow: hidden;
+
+    @include respond(tab-land) {
+      min-height: 18rem;
+    }
+  }
+
+  &__card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s;
+    width: 46.5%;
   }
 
   &__btn {

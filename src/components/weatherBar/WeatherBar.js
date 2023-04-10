@@ -4,7 +4,7 @@ import Location from "./current/Location";
 import CurrentWeather from "./current/CurrentWeather";
 import CurrentForecast from "./forecast/CurrentForecast";
 import SunActivity from "./sunActivity/SunActivity";
-import SearchBar from "../dashboard/header/SearchBar";
+import SearchBar from "../UI/SearchBar";
 import icons from "../../assets/icons/icons.svg";
 
 const WeatherBar = () => {
