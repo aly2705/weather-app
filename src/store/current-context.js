@@ -2,19 +2,19 @@ import React, { useCallback, useState } from "react";
 
 const CurrentContext = React.createContext({
   weather: {
-    temperature: 0,
-    condition: "",
-    icon: "",
+    temperature: 10,
+    condition: "Sunny",
+    icon: "//cdn.weatherapi.com/weather/64x64/day/113.png",
     min: 0,
     max: 0,
     chanceOfRain: 0,
-    feelsLike: 0,
+    feelsLike: 10,
     sunrise: "",
     sunset: "",
     isDay: 0,
   },
   location: {
-    city: "",
+    city: "Location Not Found",
     country: "",
     localTime: new Date(),
     hourString: "",
@@ -45,7 +45,7 @@ export const CurrentContextProvider = (props) => {
       isDay: APIdata.current.is_day,
     };
     const currentLocation = {
-      city: APIdata.location.region || APIdata.location.name,
+      city: APIdata.location.name,
       country: APIdata.location.country,
       localTime: new Date(APIdata.location.localtime_epoch * 1000),
       hourString: APIdata.location.localtime.slice(-5),
@@ -65,7 +65,6 @@ export const CurrentContextProvider = (props) => {
           chanceOfRain: hour.chance_of_rain,
         };
       });
-    console.log(hoursForecastedToday.length);
 
     const hoursForecastedTomorrow = APIdata.forecast.forecastday
       .at(1)
@@ -91,9 +90,6 @@ export const CurrentContextProvider = (props) => {
       }),
       hours: [...hoursForecastedToday, ...hoursForecastedTomorrow],
     };
-    console.log(currentWeather);
-    console.log(currentLocation);
-    console.log(dailyForecast);
 
     setWeather(currentWeather);
     setLocation(currentLocation);

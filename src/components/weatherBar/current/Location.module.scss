@@ -3,6 +3,10 @@
 .location {
   display: grid;
 
+  @include respond(tab-port-large) {
+    max-width: 50%;
+  }
+
   @include respond(phone-small) {
     margin-top: 7rem;
   }

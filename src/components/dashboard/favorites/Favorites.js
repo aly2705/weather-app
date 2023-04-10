@@ -14,14 +14,14 @@ const dummy_pins = [
   {
     city: "Brasov",
     country: "Romania",
-    icon: "//cdn.weatherapi.com/weather/64x64/day/122.png",
+    icon: "//cdn.weatherapi.com/weather/64x64/day/119.png",
     temperature: 4,
-    condition: "Partially Cloudy",
+    condition: "Overcast",
   },
   {
     city: "Timisoara",
     country: "Romania",
-    icon: "//cdn.weatherapi.com/weather/64x64/day/119.png",
+    icon: "//cdn.weatherapi.com/weather/64x64/day/113.png",
     temperature: 7,
     condition: "Sunny",
   },

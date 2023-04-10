@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useContext, useRef } from "react";
 import useHTTP from "./useHTTP";
-import { API_KEY } from "../helpers/config";
+import { API_KEY, API_URL } from "../helpers/config";
 import CurrentContext from "../store/current-context";
 
 const useInit = () => {
@@ -9,15 +9,13 @@ const useInit = () => {
 
   const process = useCallback((data) => {
     currentContext.current.setCurrentData(data);
-    console.log("Set data in context");
-    console.log(data);
   }, []);
 
   const successfulGeolocation = useCallback(
     (position) => {
       const { latitude, longitude } = position.coords;
       const coords = [latitude, longitude];
-      const url = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${coords.join(
+      const url = `${API_URL}/forecast.json?key=${API_KEY}&q=${coords.join(
         ","
       )}&days=4`;
 

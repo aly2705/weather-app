@@ -4,6 +4,7 @@ import CurrentContext from "../../../store/current-context";
 
 const Location = () => {
   const location = useContext(CurrentContext).location;
+
   return (
     <div className={classes.location}>
       <div className={classes.location__city}>
