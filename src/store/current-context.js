@@ -18,6 +18,7 @@ const CurrentContext = React.createContext({
     country: "",
     localTime: new Date(),
     hourString: "",
+    isPinned: false,
   },
   forecast: {
     days: [],
@@ -49,6 +50,7 @@ export const CurrentContextProvider = (props) => {
       country: APIdata.location.country,
       localTime: new Date(APIdata.location.localtime_epoch * 1000),
       hourString: APIdata.location.localtime.slice(-5),
+      isPinned: true,
     };
 
     const hoursForecastedToday = APIdata.forecast.forecastday

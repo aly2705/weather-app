@@ -34,7 +34,7 @@
     @include respond(tab-port-large) {
       display: flex;
       position: absolute;
-      right: 4rem;
+      right: 10rem;
     }
     @include respond(phone-small) {
       width: calc(100% - 8rem);

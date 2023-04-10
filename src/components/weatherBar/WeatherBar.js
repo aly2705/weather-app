@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import classes from "./WeatherBar.module.scss";
 import Location from "./current/Location";
 import CurrentWeather from "./current/CurrentWeather";
@@ -8,9 +8,11 @@ import SearchBar from "../UI/SearchBar";
 import icons from "../../assets/icons/icons.svg";
 
 const WeatherBar = () => {
+  const dashboardRef = useRef(document.getElementById("dashboard"));
   const scrollHandler = () => {
-    document.getElementById("dashboard").scrollIntoView({ behavior: "smooth" });
+    dashboardRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <section className={classes.current}>
       <SearchBar />

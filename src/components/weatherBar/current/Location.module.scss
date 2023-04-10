@@ -1,14 +1,56 @@
 @import "../../../styles/abstracts.scss";
 
 .location {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
 
   @include respond(tab-port-large) {
-    max-width: 50%;
+    max-width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
   }
 
   @include respond(phone-small) {
     margin-top: 7rem;
+    max-width: 100%;
+  }
+
+  &__data {
+    display: grid;
+    @include respond(tab-port-large) {
+      max-width: 50%;
+    }
+    @include respond(tab-port-large) {
+      max-width: 40%;
+    }
+
+    @include respond(phone-small) {
+      max-width: 100%;
+    }
+  }
+
+  &__star {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    transform: translateY(8px);
+    @include respond(tab-port-large) {
+      transform: translateY(7px);
+    }
+    svg {
+      width: 3rem;
+      height: 3rem;
+      fill: var(--color-text-light-secondary);
+
+      @include respond(tab-port-large) {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
   }
 
   &__city {
