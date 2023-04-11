@@ -23,10 +23,10 @@ const Pin = ({ pin: pinProp }) => {
   };
   useEffect(() => {
     sendRequest(
-      `${API_URL}/current.json?key=${API_KEY}&q=${pin.city}`,
+      `${API_URL}/current.json?key=${API_KEY}&q=${pinProp.city}`,
       processPinData
     );
-  }, [pin.city, sendRequest]);
+  }, [pinProp, sendRequest]);
 
   // Handlers for click on pin to be displayed as current location
   const processNewData = (data) => {

@@ -2,10 +2,12 @@ import { useCallback, useEffect, useContext, useRef } from "react";
 import useHTTP from "./useHTTP";
 import { API_KEY, API_URL } from "../helpers/config";
 import CurrentContext from "../store/current-context";
+//import FavoritesContext from "../store/favorites-context";
 
 const useInit = () => {
   const { sendRequest } = useHTTP();
   const currentContext = useRef(useContext(CurrentContext));
+  //const favoritesContext = useRef(useContext(FavoritesContext));
 
   const process = useCallback((data) => {
     currentContext.current.setCurrentData(data);

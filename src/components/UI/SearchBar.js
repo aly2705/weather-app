@@ -22,7 +22,7 @@ const SearchBar = () => {
     const url = `${API_URL}/forecast.json?key=${API_KEY}&q=${enteredCity}&days=4`;
     sendRequest(url, processNewData);
   };
-  console.log("Improve user feedback on location not found");
+  //console.log("Improve user feedback on location not found");
 
   return (
     <form className={classes.search} onSubmit={submitHandler}>

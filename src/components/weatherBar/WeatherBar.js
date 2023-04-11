@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import classes from "./WeatherBar.module.scss";
 import Location from "./current/Location";
 import CurrentWeather from "./current/CurrentWeather";
@@ -8,9 +8,8 @@ import SearchBar from "../UI/SearchBar";
 import icons from "../../assets/icons/icons.svg";
 
 const WeatherBar = () => {
-  const dashboardRef = useRef(document.getElementById("dashboard"));
   const scrollHandler = () => {
-    dashboardRef.current.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("dashboard").scrollIntoView({ behavior: "smooth" });
   };
 
   return (

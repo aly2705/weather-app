@@ -1,40 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import classes from "./Favorites.module.scss";
 import Pin from "./Pin";
 import icons from "../../../assets/icons/icons.svg";
-
-const dummy_pins = [
-  {
-    city: "Cluj-Napoca",
-    country: "Romania",
-    icon: "//cdn.weatherapi.com/weather/64x64/day/113.png",
-    temperature: 10,
-    condition: "Sunny",
-  },
-  {
-    city: "Brasov",
-    country: "Romania",
-    icon: "//cdn.weatherapi.com/weather/64x64/day/119.png",
-    temperature: 4,
-    condition: "Overcast",
-  },
-  {
-    city: "Timisoara",
-    country: "Romania",
-    icon: "//cdn.weatherapi.com/weather/64x64/day/113.png",
-    temperature: 7,
-    condition: "Sunny",
-  },
-];
+import FavoritesContext from "../../../store/favorites-context";
 
 const Favorites = () => {
+  const favoritesContext = useContext(FavoritesContext);
   const [pins, setPins] = useState([]);
   const lastPinRef = useRef();
 
   useEffect(() => {
-    dummy_pins.forEach((pin, i) => (pin.position = i));
-    setPins(dummy_pins);
-  }, []);
+    // Add initial position to the pins initialized from context
+    // when component mounts (for slider functionality)
+    const newPins = favoritesContext.favorites.map((pin, i) => {
+      return { ...pin, position: i };
+    });
+
+    setPins(newPins);
+  }, [favoritesContext.favorites]);
 
   const translateBackHandler = () => {
     // Stops when first card is in the initial position
