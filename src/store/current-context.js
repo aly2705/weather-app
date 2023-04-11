@@ -1,27 +1,30 @@
 import React, { useCallback, useContext, useState } from "react";
 import FavoritesContext from "./favorites-context";
 
+const initialWeather = {
+  temperature: 10,
+  code: 1000,
+  condition: "Sunny",
+  icon: "//cdn.weatherapi.com/weather/64x64/day/113.png",
+  min: 0,
+  max: 0,
+  chanceOfRain: 0,
+  feelsLike: 10,
+  sunrise: "",
+  sunset: "",
+  isDay: 0,
+};
+const initialLocation = {
+  city: "Location Not Found",
+  country: "",
+  localTime: new Date(),
+  hourString: "",
+  isPinned: false,
+};
+
 const CurrentContext = React.createContext({
-  weather: {
-    temperature: 10,
-    code: 0,
-    condition: "Sunny",
-    icon: "//cdn.weatherapi.com/weather/64x64/day/113.png",
-    min: 0,
-    max: 0,
-    chanceOfRain: 0,
-    feelsLike: 10,
-    sunrise: "",
-    sunset: "",
-    isDay: 0,
-  },
-  location: {
-    city: "Location Not Found",
-    country: "",
-    localTime: new Date(),
-    hourString: "",
-    isPinned: false,
-  },
+  weather: initialWeather,
+  location: initialLocation,
   forecast: {
     days: [],
     hours: [],
@@ -32,8 +35,8 @@ const CurrentContext = React.createContext({
 
 export const CurrentContextProvider = ({ children }) => {
   const favorites = useContext(FavoritesContext).favorites;
-  const [weather, setWeather] = useState({});
-  const [location, setLocation] = useState({});
+  const [weather, setWeather] = useState(initialWeather);
+  const [location, setLocation] = useState(initialLocation);
   const [forecast, setForecast] = useState({});
 
   const setCurrentData = useCallback(

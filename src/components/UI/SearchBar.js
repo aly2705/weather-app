@@ -4,14 +4,15 @@ import icons from "../../assets/icons/icons.svg";
 import useHTTP from "../../hooks/useHTTP";
 import { API_KEY, API_URL } from "../../helpers/config";
 import CurrentContext from "../../store/current-context";
+import ErrorModal from "./ErrorModal";
+import LoadingSpinner from "./LoadingSpinner";
 
 const SearchBar = () => {
   const searchInputRef = useRef();
-  const { sendRequest, error } = useHTTP();
+  const { sendRequest, error, setError, isLoading } = useHTTP();
   const currentContext = useContext(CurrentContext);
 
   const processNewData = (data) => {
-    console.log(data);
     currentContext.setCurrentData(data);
     searchInputRef.current.value = "";
   };
@@ -22,7 +23,11 @@ const SearchBar = () => {
     const url = `${API_URL}/forecast.json?key=${API_KEY}&q=${enteredCity}&days=4`;
     sendRequest(url, processNewData);
   };
-  //console.log("Improve user feedback on location not found");
+
+  const clearSearchHandler = () => {
+    setError(null);
+    searchInputRef.current.value = "";
+  };
 
   return (
     <form className={classes.search} onSubmit={submitHandler}>
@@ -35,8 +40,16 @@ const SearchBar = () => {
         placeholder="Search location here"
         ref={searchInputRef}
       />
+      {isLoading && <LoadingSpinner />}
 
-      {error && <p>❌</p>}
+      {error && (
+        <ErrorModal
+          heading="Location not found"
+          action="Confirm"
+          text="The location you searched for couldn't be found. Try another location!"
+          onClick={clearSearchHandler}
+        />
+      )}
     </form>
   );
 };

@@ -5,7 +5,7 @@ import CurrentContext from "../store/current-context";
 //import FavoritesContext from "../store/favorites-context";
 
 const useInit = () => {
-  const { sendRequest } = useHTTP();
+  const { sendRequest, error, setError, isLoading } = useHTTP();
   const currentContext = useRef(useContext(CurrentContext));
   //const favoritesContext = useRef(useContext(FavoritesContext));
 
@@ -26,8 +26,8 @@ const useInit = () => {
     [sendRequest, process]
   );
   const errorGeolocation = useCallback(() => {
-    console.log("Couldn't get the current position!");
-  }, []);
+    setError("Couldn't get the current position");
+  }, [setError]);
 
   useEffect(() => {
     if (navigator.geolocation)
@@ -36,6 +36,8 @@ const useInit = () => {
         errorGeolocation
       );
   }, [successfulGeolocation, errorGeolocation]);
+
+  return { error, isLoading };
 };
 
 export default useInit;

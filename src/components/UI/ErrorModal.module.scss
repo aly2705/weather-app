@@ -1,0 +1,26 @@
+.error {
+  display: grid;
+  gap: 0.8rem;
+  h3 {
+    color: var(--color-grad-1);
+    font-size: 2.4rem;
+  }
+  p {
+    font-weight: 600;
+  }
+
+  button {
+    justify-self: end;
+    border: none;
+    background-color: var(--color-grad-2);
+    color: var(--color-text-light-primary);
+    margin-top: 1rem;
+    outline: none;
+    padding: 1.5rem 2.5rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+}

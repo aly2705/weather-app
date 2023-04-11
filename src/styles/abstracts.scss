@@ -91,3 +91,14 @@ $bp-phone-v-small: 25em; //400px
     }
   }
 }
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
