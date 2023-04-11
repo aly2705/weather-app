@@ -20,7 +20,6 @@ export const FavoritesContextProvider = ({ children }) => {
   const getFavorites = useCallback(() => {
     if (localStorage.getItem("favorites")) {
       const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
-      console.log(storedFavorites);
       setFavorites(storedFavorites);
     }
   }, []);
@@ -28,7 +27,6 @@ export const FavoritesContextProvider = ({ children }) => {
   const addFavorite = (newFav) => {
     setFavorites((prev) => {
       const newFavorites = [newFav, ...prev];
-      console.log(newFavorites);
 
       localStorage.setItem("favorites", JSON.stringify(newFavorites));
       return newFavorites;
@@ -38,7 +36,6 @@ export const FavoritesContextProvider = ({ children }) => {
   const removeFavorite = (favCityName, favCountryName) => {
     setFavorites((prev) => {
       const newFavorites = prev.filter((fav) => fav.city !== favCityName);
-      //console.log(newFavorites);
 
       localStorage.setItem("favorites", JSON.stringify(newFavorites));
       return newFavorites;

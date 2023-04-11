@@ -55,7 +55,6 @@ export const CurrentContextProvider = ({ children }) => {
         sunset: APIdata.forecast.forecastday.at(0).astro.sunset,
         isDay: APIdata.current.is_day,
       };
-      //console.log("Favorites context:", favorites);
 
       const currentLocation = {
         city: APIdata.location.name,

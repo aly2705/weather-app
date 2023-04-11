@@ -1,23 +1,39 @@
 # Weather-App
 
-## Available Scripts
+This is a weather application designed to provide users with up-to-date weather information. The application is built using React, and makes use of [WeatherApi.com](https://www.weatherapi.com/) to obtain current weather data.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- connected to a weather api for real time data fetching
+- initialises with the weather data fetched for the current location of the user
+- fully responsive for small and big screens
+- the user can see the weather forecast: next 24 hours and next 3 days
+- the user can search for other locations
+- the user can mark locations as favorites
+- adapting the app style (the weather section background) to the current weather condition
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How to run the app
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+In order to get the app running on a localhost, you will need to:
 
-### `npm run build`
+1. Make sure you have git and npm installed on your computer
+2. Clone the git repository using the command:  
+   `git clone https://github.com/aly2705/weather-app.git`
+3. In the repository root folder open a terminal and install the dependencies by running:  
+   `npm install`
+4. Once the app is installed you can run it with the following command:  
+   `npm start`  
+   This command runs the app in the development mode.
+5. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To use the weather app, simply allow access to your location. Users can view current and forecasted weather displayed in the app for the current location, pin locations by clicking on the star icon, preview the starred locations and load data for other cities with one search.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Frontend Stack
+
+The app is built with:
+
+- React.js
+- SASS modules
+- React Context (for state management)
