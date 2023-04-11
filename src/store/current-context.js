@@ -4,6 +4,7 @@ import FavoritesContext from "./favorites-context";
 const CurrentContext = React.createContext({
   weather: {
     temperature: 10,
+    code: 0,
     condition: "Sunny",
     icon: "//cdn.weatherapi.com/weather/64x64/day/113.png",
     min: 0,
@@ -39,6 +40,7 @@ export const CurrentContextProvider = ({ children }) => {
     (APIdata) => {
       const currentWeather = {
         temperature: APIdata.current.temp_c,
+        code: APIdata.current.condition.code,
         condition: APIdata.current.condition.text,
         icon: APIdata.current.condition.icon,
         min: APIdata.forecast.forecastday.at(0).day.mintemp_c,
