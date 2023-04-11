@@ -5,7 +5,7 @@ This is a weather application designed to provide users with up-to-date weather 
 ## Features
 
 - connected to a weather api for real time data fetching
-- initialises with the weather data fetched for the current location of the user
+- initializes with the weather data fetched for the current location of the user
 - fully responsive for small and big screens
 - the user can see the weather forecast: next 24 hours and next 3 days
 - the user can search for other locations
