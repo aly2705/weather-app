@@ -11,21 +11,8 @@ import thunderBackground from "../assets/img/thunder.jpg";
 
 export const API_KEY = "61ec7890cf754192881162348230504";
 export const API_URL = "https://api.weatherapi.com/v1";
-export const PLACEHOLDER_FAVORITES = [
-  {
-    city: "Bucharest",
-    country: "Romania",
-  },
-  {
-    city: "Cluj-Napoca",
-    country: "Romania",
-  },
-  {
-    city: "Brasov",
-    country: "Romania",
-  },
-];
 
+// Weather codes with added backgrounds for theme switching
 export const WEATHER_BACKGROUNDS = [
   {
     code: 1000,

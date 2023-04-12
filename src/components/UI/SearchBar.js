@@ -45,7 +45,7 @@ const SearchBar = () => {
       {error && (
         <ErrorModal
           heading="Location not found"
-          action="Confirm"
+          action="OK"
           text="The location you searched for couldn't be found. Try another location!"
           onClick={clearSearchHandler}
         />

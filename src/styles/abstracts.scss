@@ -8,9 +8,9 @@
   --color-grad-1-transparent: #223956c6;
   --color-grad-2-transparent: #183a7e;
   --color-primary-shade: #2b4879;
-  --color-primary: #2f69fe; //figma logo
+  --color-primary: #339af0;
   --color-primary-tint: #8cb2fb;
-  --color-primary-tint-2: #339af0;
+  --color-accent: #2f69fe;
 
   --color-text-light-primary: #e9ecef;
   --color-text-light-secondary: #c4e2fe;
@@ -19,8 +19,7 @@
   --color-text-dark-primary: #212529;
   --color-text-dark-secondary: #868e96;
 
-  --color-grey-1: #edf4fa; // blueish light background
-  //--color-grey-1: #f8f9fa;
+  --color-grey-1: #edf4fa;
   --color-grey-2: #ced4da;
   --color-grey-3: #adb5bd;
 
@@ -86,6 +85,7 @@ $bp-phone-v-small: 25em; //400px
   }
 }
 
+// ANIMATIONS
 @keyframes slide-down {
   from {
     opacity: 0;

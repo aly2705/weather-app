@@ -27,7 +27,7 @@
   }
 
   &__weekday {
-    color: var(--color-primary-tint-2);
+    color: var(--color-primary);
     font-weight: 700;
     font-size: 2rem;
 
@@ -80,7 +80,7 @@
     svg {
       width: 2.2rem;
       height: 2.2rem;
-      fill: var(--color-primary);
+      fill: var(--color-accent);
     }
 
     // @include respond(tab-port-large) {

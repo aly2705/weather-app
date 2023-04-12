@@ -1,9 +1,8 @@
-import React, { useCallback, useState } from "react";
-import { PLACEHOLDER_FAVORITES } from "../helpers/config";
+import React, { useState } from "react";
+import { initialFavorites } from "../helpers/templatePlaceholders";
 
 const FavoritesContext = React.createContext({
   favorites: [],
-  getFavorites: () => {},
   addFavorite: (newFav) => {},
   removeFavorite: (favCityName, favCountryName) => {},
 });
@@ -14,15 +13,8 @@ export const FavoritesContextProvider = ({ children }) => {
     JSON.parse(localStorage.getItem("favorites"));
 
   const [favorites, setFavorites] = useState(
-    storedFavorites || PLACEHOLDER_FAVORITES
+    storedFavorites || initialFavorites
   );
-
-  const getFavorites = useCallback(() => {
-    if (localStorage.getItem("favorites")) {
-      const storedFavorites = JSON.parse(localStorage.getItem("favorites"));
-      setFavorites(storedFavorites);
-    }
-  }, []);
 
   const addFavorite = (newFav) => {
     setFavorites((prev) => {
@@ -46,7 +38,6 @@ export const FavoritesContextProvider = ({ children }) => {
     <FavoritesContext.Provider
       value={{
         favorites,
-        getFavorites,
         addFavorite,
         removeFavorite,
       }}

@@ -29,7 +29,7 @@
     grid-column: 1 / -1;
     justify-self: center;
     font-size: 1.8rem;
-    color: var(--color-primary-tint-2);
+    color: var(--color-primary);
     text-align: center;
 
     @include respond(phone-small) {

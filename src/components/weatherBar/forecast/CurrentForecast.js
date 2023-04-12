@@ -6,7 +6,7 @@ import CurrentContext from "../../../store/current-context";
 
 const CurrentForecast = () => {
   const contextForecast = useContext(CurrentContext).forecast;
-  const [forecasts, setForecasts] = useState([]);
+  const [forecasts, setForecasts] = useState(contextForecast.hours);
   const lastHourRef = useRef();
 
   useEffect(() => {
