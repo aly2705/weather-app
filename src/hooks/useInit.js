@@ -19,7 +19,7 @@ const useInit = () => {
       const coords = [latitude, longitude];
       const url = `${API_URL}/forecast.json?key=${API_KEY}&q=${coords.join(
         ","
-      )}&days=4`;
+      )}&days=3`;
 
       sendRequest(url, process);
     },

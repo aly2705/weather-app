@@ -15,6 +15,14 @@
     position: absolute;
     top: 0;
     left: 0;
+
+    @include respond(tab-port-large) {
+      overflow: scroll;
+    }
+  }
+
+  &__slider::-webkit-scrollbar {
+    display: none;
   }
 
   &__card {

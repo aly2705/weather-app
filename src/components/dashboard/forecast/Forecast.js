@@ -11,7 +11,6 @@ const Forecast = () => {
       <div className={classes.forecast__days}>
         {forecastDays &&
           forecastDays.map((day, i) => {
-            if (i === 0) return null;
             return <Day key={i} dayForecast={day} />;
           })}
       </div>
